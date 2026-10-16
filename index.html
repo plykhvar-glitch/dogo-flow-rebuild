@@ -495,6 +495,67 @@ a{color:inherit}
   padding-top:14px;margin-top:26px}
 .pn-sep{height:1px;background:var(--panel-line);margin:26px 0}
 .hidden{display:none !important}
+
+/* ============ overview, restyled after dogo.app and the app itself ============ */
+:root{--bg:#FFFFFF;--ink:#201515;--ink2:#4F4747;--ink3:#8C8585;--hair:rgba(32,21,21,.09);--hair2:rgba(32,21,21,.16);--soft:#F7F8F5;
+  --pc-mint:#E4F4EA;--pc-yellow:#FBF2BE;--pc-coral:#FDE6DC;--pc-lilac:#EDE6F6;--pc-blue:#DFEEFB}
+.nav{background:rgba(255,255,255,.9)}
+.nav-brand b{font-family:'Montserrat Alternates',sans-serif;font-weight:700;letter-spacing:-.01em}
+.hero{padding:86px 0 0}
+.hero::before,.hero::after{display:none}
+.hero .paw{width:46px;height:46px;display:block;margin:0 auto 18px}
+.hero h1{font-size:92px;letter-spacing:-.035em;color:var(--ink)}
+.hero .lede{color:var(--ink2)}
+.eyebrow{color:#139A62;margin-bottom:18px}
+.hero-dec{position:absolute;top:70px;width:170px;height:170px;border-radius:50%;display:grid;place-items:center;z-index:0;pointer-events:none}
+.hero-dec img{width:104px;height:104px;border-radius:24px;display:block;box-shadow:0 10px 24px -12px rgba(32,21,21,.35)}
+.hero-dec.l{left:calc(50% - 520px);background:var(--pc-blue)}
+.hero-dec.l img{transform:rotate(-7deg)}
+.hero-dec.r{right:calc(50% - 520px);top:150px;background:var(--pc-mint)}
+.hero-dec.r img{transform:rotate(7deg)}
+.hero-dec span{position:absolute;font:600 15px/1.25 'Montserrat Alternates',sans-serif;color:var(--ink2);white-space:nowrap}
+.hero-dec.l span{left:16px;top:-34px}
+.hero-dec.r span{right:6px;bottom:-40px}
+@media(max-width:1180px){.hero-dec{display:none}}
+.ghostbtn{background:var(--accent);border:none;color:var(--accent-on);box-shadow:none;padding:9px 22px 9px 9px}
+.ghostbtn .pl{background:#fff}
+.stats{border:none;gap:12px;max-width:820px;margin-top:60px}
+.stat{border:none;border-radius:22px;padding:24px 14px}
+.stat:nth-child(1){background:var(--pc-mint)} .stat:nth-child(2){background:var(--pc-yellow)} .stat:nth-child(3){background:var(--pc-blue)}
+.stat b{font-size:32px}
+.stat span{color:var(--ink2)}
+.fb-i .tick{background:var(--pc-mint)}
+.sec-k{color:#139A62}
+.sec h2{color:var(--ink)}
+.sec.panel>.wrap{background:var(--soft);border-radius:32px;padding-top:64px;padding-bottom:64px}
+@media(max-width:700px){.sec.panel>.wrap{border-radius:24px;padding-top:40px;padding-bottom:40px}}
+.sec.panel{padding:72px 0 0}
+.wrap-out{max-width:1080px;margin:0 auto;padding:0 32px}
+@media(max-width:700px){.wrap-out{padding:0 12px}}
+.note{border:none;box-shadow:0 2px 14px rgba(32,21,21,.05);border-radius:22px}
+.note h4{font-family:'Montserrat Alternates',sans-serif;font-weight:700;font-size:16px}
+.rule{display:none}
+.ideas{border-top:none;gap:14px;margin-top:26px}
+.idea{grid-template-columns:96px 1fr 170px;grid-template-areas:"ill no out" "ill body out";row-gap:6px;column-gap:24px;
+  border:none;border-radius:26px;padding:24px 26px;background:var(--pc-mint)}
+.idea:nth-child(2){background:var(--pc-yellow)} .idea:nth-child(3){background:var(--pc-coral)}
+.idea:nth-child(4){background:var(--pc-lilac)} .idea:nth-child(5){background:var(--pc-blue)}
+.idea:hover{background-color:inherit;filter:brightness(.985);transform:translateY(-1px)}
+.idea .ill{grid-area:ill;width:96px;height:96px;border-radius:22px;object-fit:cover;display:block;box-shadow:0 8px 20px -12px rgba(32,21,21,.4)}
+.idea .no{grid-area:no;padding:0;justify-self:start;background:#fff;border-radius:10px;padding:3px 9px;font-size:11.5px;color:var(--ink2)}
+.idea>span:not(.no):not(.out){grid-area:body}
+.idea .out{grid-area:out;align-self:center}
+.idea h3{font-family:'Montserrat Alternates',sans-serif;font-weight:700;font-size:21px;letter-spacing:-.015em;color:var(--ink)}
+.idea p{color:var(--ink2)}
+.idea .out b{font-family:'Montserrat Alternates',sans-serif;font-weight:700;color:#0B7F4E}
+.idea .seeit{color:var(--ink);background:#fff;border-radius:16px;padding:6px 12px}
+@media(max-width:780px){.idea{grid-template-columns:64px 1fr;grid-template-areas:"ill no" "body body" "out out";padding:20px}
+  .idea .ill{width:64px;height:64px;border-radius:16px}.idea .no{align-self:center}.idea .out{grid-column:1/-1;grid-row:3;text-align:left;padding-top:2px;display:flex;align-items:baseline;gap:10px}.idea .out span{margin-top:0}}
+.band{background:#EBF5F0;border:none;box-shadow:none;border-radius:28px}
+.band .lab{color:#139A62}
+.band .nums div b{color:#0B7F4E}
+.qr{border:none;background:var(--soft)}
+.foot{border-top:none}
 </style>
 </head>
 <body>
@@ -516,7 +577,10 @@ a{color:inherit}
 <div class="view on" id="view-over">
 
 <div class="hero">
+  <div class="hero-dec l"><span>Potty training</span><img src="img/tile2.jpg" alt=""></div>
+  <div class="hero-dec r"><img src="img/tile3.jpg" alt=""><span>Pleasant walks</span></div>
   <div class="wrap">
+    <svg class="paw" viewBox="0 0 64 64" data-paw></svg>
     <div class="eyebrow">Growth Audit · October 2026</div>
     <h1>Dogo</h1>
     <p class="lede">Five ideas to unlock more revenue from the traffic you already have.</p>
@@ -542,7 +606,7 @@ a{color:inherit}
   </div>
 </div>
 
-<div class="sec">
+<div class="sec panel">
   <div class="wrap">
     <div class="sec-k">What this is</div>
     <h2>We went through Dogo the way a new dog parent does, then rebuilt the few places we think are leaving money on the table.</h2>
@@ -572,7 +636,7 @@ a{color:inherit}
 
     <div class="ideas">
       <button class="idea" data-jump="paywall">
-        <span class="no">01</span>
+        <img class="ill" src="img/tile2.jpg" alt=""><span class="no">01</span>
         <span>
           <h3>Name the dog and the plan on the paywall</h3>
           <p>After sixteen questions the paywall opens on “Become the best dog parent”, the line everyone gets. One screen earlier your plan promised “Clean house” in the first 14 days. The paywall should open on that promise, with the dog’s name in it.</p>
@@ -582,7 +646,7 @@ a{color:inherit}
       </button>
 
       <button class="idea" data-jump="offer">
-        <span class="no">02</span>
+        <img class="ill" src="img/tile5.jpg" alt=""><span class="no">02</span>
         <span>
           <h3>Offer one month, no trial, when they close</h3>
           <p>Closing the paywall today ends the flow. Your 1-month plan at $11.99 already exists. Offered alone and paid today, it is a second chance for people who did not want a free trial that rolls into a year.</p>
@@ -592,7 +656,7 @@ a{color:inherit}
       </button>
 
       <button class="idea" data-jump="paywall">
-        <span class="no">03</span>
+        <img class="ill" src="img/tile3.jpg" alt=""><span class="no">03</span>
         <span>
           <h3>Move your proof up to the plans</h3>
           <p>Your 4.8 from 17K ratings, Apple’s “Ones to Watch” and 100,000+ success stories are all on the paywall, but below the trial timeline, several swipes under the button. One row of them belongs right above the three plans.</p>
@@ -602,7 +666,7 @@ a{color:inherit}
       </button>
 
       <button class="idea" data-jump="reminder">
-        <span class="no">04</span>
+        <img class="ill" src="img/c-alone.jpg" alt=""><span class="no">04</span>
         <span>
           <h3>Ask for notifications when the reminder needs them</h3>
           <p>The tracking and notification prompts fire on the first tap of Get started, before the dog even has a name. Your trial screen already gives the reason: “Remind me before my trial ends”. Let that toggle set it up, and ask iOS once the trial has started.</p>
@@ -612,7 +676,7 @@ a{color:inherit}
       </button>
 
       <button class="idea" data-jump="plan">
-        <span class="no">05</span>
+        <img class="ill" src="img/tile1.jpg" alt=""><span class="no">05</span>
         <span>
           <h3>Put the training time on the plan</h3>
           <p>You ask how many minutes a day and the best time to train. The plan then lists courses but never says “15 minutes a day, first session today at 7:00 PM”. One line turns two answers into an appointment.</p>
